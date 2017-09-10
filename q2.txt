@@ -1,0 +1,44 @@
+#include<stdio.h>
+void main()
+{
+int r,travelTimes[],readyTimes[],cancelTimes[]; //creating arrays
+int i,cTime=0,wTime;
+printf("Enter no of riders");
+scanf("%d",&r);
+printf("Enter travel time of riders");
+for(i=0;i<=r-1;i++)
+{
+scanf("%d",&travelTimes[i]);
+}
+printf("Enter the ready time of riders");
+for(i=0;i<=r-1;i++)
+{
+scanf("%d",&readyTimes[i]);
+}
+printf("Enter the ready time of riders");
+for(i=0;i<=r-1;i++)
+{
+scanf("%d",&cancelTimes[i]);
+}
+for(int i=0;i<=r-1;i++)
+{
+if(cTime<=readyTimes[i])
+{
+wTime=readyTimes[i]-cTime;
+cTime=wTime+travelTimes[i];
+}
+else if(cTime>readyTimes[i]&&cTime<=cancelTimes[i])
+{
+cTime=readyTimes[i]+travelTimes[i];
+}
+else if(cTimes[i]>cancelTimes[i])
+{
+printf("the ride cancelled");
+}
+}
+printf("the complete time of ride is",cTime);
+if(cTime>86400)
+printf("the ride exceeds the time limit");
+else
+printf("the ride completed");
+}

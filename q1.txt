@@ -1,0 +1,22 @@
+def dist(L,M):
+    return abs(L[1]-M[1])+abs(L[0]-M[0])
+def detour(L,B,C,c):
+    return c+dist(L,C)+dist(B,L)
+def selRider(A,B,C,X,Y):
+    toDist = dist(B,A)
+    midDist=dist(C,A)
+    remDist=totDist-midDist
+    xDist = detour(X,B,C,midDist)
+    yDist = detour(Y,B,C,midDist)
+    if xDist > 2*totDist and yDist > 2*toDist:
+        return -1
+    elif xDist <= 2*totDist and xDist <= yDist:
+        return 1
+    elif yDist <= 2*totDist and yDist <= xDist:
+        return 2
+
+A = [0,0]
+B = [3,3]
+C = [3,1]
+X = [5,0]
+Y = [2,2]
